@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+.navbar .navbar-brand {
+  font-size: 40px;
+  font-weight: 600;
+  color: orange;
+}
+.card .heading {
+  text-align: center;
+  color: rgb(27, 126, 23);
+}*/
+/* .equal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+.main_char {
+  background-color: rgb(163, 248, 156);
+}

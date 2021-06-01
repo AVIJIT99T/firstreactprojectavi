@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  background-color: #b3e5fc;
+}
+.navbar_main {
+  background-color: #a0b7ec;
+}
+.btn_main {
+  color: #111111;
+  background: cyan;
+}
+.btn_main:hover {
+  background-color: #fff;
+  color: crimson;
+}
+/* .texeLeft {
+  text-align: left;
+} */
+/* .searchBar {
+  display: flex;
+  float: right;
+}
+.searchBar input {
+  margin: 10px 10px 0 0;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 10px;
+} */
+/* .card_main {
+  width: 450px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: auto;
+} */
+
+/* .btn1 {
+  padding: 5px 8px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #868686;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.btn1:hover {
+  color: cyan;
+  background-color: crimson;
+} */
+/* .stats {
+  background: #f2f5f8 !important;
+  color: #000 !important;
+}
+.articles {
+  font-size: 10px;
+  color: #a1aab9;
+}
+.number1 {
+  font-weight: 500;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  background-color: crimson;
+}
+.img {
+  margin-left: 10px;
+} */
+@media screen and (max-width: 420px) {
+  .main .navbar-brand {
+    margin-left: -40px;
+  }
+}
