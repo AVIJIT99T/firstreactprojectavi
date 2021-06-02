@@ -3,10 +3,11 @@ import { withRouter } from "react-router";
 import axios from "axios";
 import "./CharacterDetails.css";
 import { FaMale } from "react-icons/fa";
-// import { FaFemale } from "react-icons/fa";
+import { FaFemale } from "react-icons/fa";
 import { FaBookDead } from "react-icons/fa";
-// import { BiFemale } from "react-icons/fa";
+import { BiFemaleSign } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
+import CharcterDesign from "./CharcterDesign";
 
 const CharacterDetails = (props) => {
   const getImage = props.char;
@@ -30,26 +31,14 @@ const CharacterDetails = (props) => {
     getImages();
   }, []);
 
-  //   let genderId;
-  //   let firstValue = "Male";
-  //   let secondValue = "Female";
-
-  //   if (img.gender == firstValue) {
-  //     genderId = <FaMale />;
-  //   } else if (img.gender == secondValue) {
-  //     genderId = <FaFemale />;
-
-  //     } else {
-  //       genderId = <BiFemale />;
-  //     }
-  //   console.log(img.gender);
+  //
 
   return (
     <>
       {img != null && (
         <div className="col-sm-8 col-md-6 col-lg-4 col-xl-3 p-3 mb-2">
           <div className="character-card card p-3 shadow">
-            <div className="upper-container-character">
+            {/* <div className="upper-container-character">
               <img
                 src={img.image}
                 className="img-fluid rounded-circle"
@@ -61,11 +50,12 @@ const CharacterDetails = (props) => {
             <div className="lower-container-character">
               <h3 className="heading">{img.name}</h3>
               <h3 className="heading">{img.location.name}</h3>
-              {/* <h3 className="heading">{img.gender}</h3>
-              <h3 className="heading">{img.status}</h3> */}
+              <h3 className="heading">{img.origin.name}</h3>
 
               <span className="heading" data-tip={img.gender}>
-                <FaMale />
+                {img.gender == "Male" && <FaMale />}
+                {img.gender == "Female" && <FaFemale />}
+                {img.gender == "unknown" && <FaBookDead />}
               </span>
 
               <h3 className="heading">{img.species}</h3>
@@ -73,16 +63,27 @@ const CharacterDetails = (props) => {
                 <FaBookDead />
               </span>
               <ReactTooltip />
-              {/* <span className="heading" data-tip={props.location.state.status}>
-              <FaBookDead />
-            </span>
-            <ReactTooltip />
-            <br /> */}
-              <br />
-              <a class="btn btn-primary mt-2" href="/main" role="button">
-                Link
-              </a>
-            </div>
+            </div> */}
+            <CharcterDesign
+              imgsrc={img.image}
+              mname={img.name}
+              lname={img.location.name}
+              oname={img.origin.name}
+              species={img.species}
+              gender={img.gender}
+              status={img.status}
+            />
+
+            <a
+              className="btn btn-primary mt-1"
+              onClick={() => {
+                props.history.push({
+                  pathname: "/location/" + img.location.url.substring(41),
+                });
+              }}
+            >
+              Details
+            </a>
           </div>
         </div>
       )}

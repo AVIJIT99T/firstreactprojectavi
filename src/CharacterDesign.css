@@ -2,32 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
 }
-/* .character-card {
-  width: 100%;
-} */
-/* .upper-container-character {
+.upper-container {
   height: 100px;
   display: flex;
   justify-content: center;
   background: linear-gradient(to left, #2d00f7, #ff0291);
 }
 
-.upper-container-character img {
+.upper-container img {
   background: white;
   padding: 5px;
-  transform: translate(0px, 45px);
+  border-radius: 50%;
   border: 2px solid #c90a90;
+  transform: translate(0px, 45px);
 }
 
-.lower-container-character {
+.lower-container {
   margin-top: 60px;
   background: white;
   text-align: center;
 }
-.lower-container-character h3 {
+.lower-container h3 {
   color: #2f2d2e;
   font-weight: 600;
   font-size: 1.5rem;
-} */
+}

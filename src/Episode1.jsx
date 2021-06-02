@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 import "./Episode.css";
 import { FaMale } from "react-icons/fa";
 import { FaFemale } from "react-icons/fa";
-// import { FaBookDead } from "react-icons/fa";
+import { FaBookDead } from "react-icons/fa";
+import CharcterDesign from "./CharcterDesign";
 import ReactTooltip from "react-tooltip";
 import EpisodeDetails from "./EpisodeDetails";
 import { NavLink } from "react-router-dom";
@@ -30,10 +31,6 @@ const Episode1 = () => {
   useEffect(() => {
     getEpisode();
   }, []);
-
-  // let genderId;
-  // let firstValue = "Male";
-  // let secondValue = "Female";
 
   return (
     <>
@@ -114,7 +111,7 @@ const Episode1 = () => {
             <div className="row justify-content-md-center">
               <div className="col-sm-4">
                 <div className="card p-3 m-auto mt-4 mb-4 shadow">
-                  <div className="upper-container">
+                  {/* <div className="upper-container">
                     <img
                       src={episode.image}
                       alt=""
@@ -126,13 +123,27 @@ const Episode1 = () => {
                     <h3 className="heading">{episode.name}</h3>
                     <span className="heading" data-tip={episode.gender}>
                       {episode.gender == "Male" ? <FaMale /> : <FaFemale />}
-                      {episode.gender == "Male" && <FaMale />}
                     </span>
                     <ReactTooltip />
                     <h3 className="heading">{episode.location.name}</h3>
+                    <h3 className="heading">{episode.origin.name}</h3>
                     <h3 className="heading">{episode.species}</h3>
-                    <h3 className="heading">{episode.status}</h3>
-                  </div>
+
+                    <span className="heading" data-tip={episode.status}>
+                      <FaBookDead />
+                    </span>
+                    <ReactTooltip />
+                  </div> */}
+
+                  <CharcterDesign
+                    imgsrc={episode.image}
+                    mname={episode.name}
+                    lname={episode.location.name}
+                    oname={episode.origin.name}
+                    species={episode.species}
+                    gender={episode.gender}
+                    status={episode.status}
+                  />
                 </div>
               </div>
             </div>
@@ -145,3 +156,5 @@ const Episode1 = () => {
 };
 
 export default withRouter(Episode1);
+
+// {episode.gender == "Male" && <FaMale />}

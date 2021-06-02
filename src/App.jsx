@@ -8,6 +8,7 @@ import Episode from "./Episode";
 import Main2 from "./Main2";
 import Episode1 from "./Episode1";
 import Character from "./Character";
+import Location from "./Location";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/main" component={Main2} />
         <Route path="/episode/:eId" component={Episode1} />
         <Route exact path="/charcter/:id" component={Character} />
+        <Route exact path="/location/:lc" component={Location} />
         <Redirect to="/" />
       </Switch>
     </>
