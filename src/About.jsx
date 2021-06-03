@@ -15,7 +15,6 @@ const About = () => {
         btname="Contact Now"
         imgsrc={img1}
       />
-      <h1>Avijit</h1>
       <Footer />
     </>
   );
