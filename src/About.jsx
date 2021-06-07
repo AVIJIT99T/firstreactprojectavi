@@ -9,7 +9,7 @@ const About = () => {
     <>
       <Navbar />
       <Common
-        fname="The page consists of"
+        fname="This page consists of"
         lname="Characters, Episodes & Locations"
         visit="/contact"
         btname="Contact Now"

@@ -3,15 +3,12 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import { useParams } from "react-router-dom";
 import "./Episode.css";
-import { FaMale } from "react-icons/fa";
-import { FaFemale } from "react-icons/fa";
-import { FaBookDead } from "react-icons/fa";
-import CharcterDesign from "./CharcterDesign";
-import ReactTooltip from "react-tooltip";
-import EpisodeDetails from "./EpisodeDetails";
-import { NavLink } from "react-router-dom";
 
-const Episode1 = () => {
+import CharcterDesign from "./CharcterDesign";
+
+import EpisodeDetails from "./EpisodeDetails";
+
+const Episode1 = (props) => {
   const { eId } = useParams();
   console.log({ eId });
   const [episode, setEpisode] = useState();
@@ -32,51 +29,26 @@ const Episode1 = () => {
     getEpisode();
   }, []);
 
+  const def = (a) => {
+    var s = a;
+    var spl = s.split("/");
+
+    var num = 0;
+    var last = spl[spl.length - 1];
+
+    for (var i = 0; i < last.length; i++) {
+      num = num * 10 + (last[i] - "0");
+    }
+
+    return num;
+  };
+
   return (
     <>
-      {/* <nav className="navbar navbar-light navbar_episode">
-        <div className="container-fluid">
-          <span className="navbar-brand mb-0 m-auto h1">
-            Details of Episodes
-          </span>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav px-2 ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  exact
-                  to="/"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
-                  About
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav> */}
-
       <nav className="navbar navbar-expand-lg navbar-light navbar_episode">
         <div className="container-fluid">
-          <div className="navbar_heading">
-            <h3 className="navbar-brand m-auto">Episode Details</h3>
-          </div>
+          <h3 className="navbar-brand navbar_epi">Episode Details</h3>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -96,7 +68,7 @@ const Episode1 = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="/episode/:eId">
+                <a className="nav-link active" href="/main">
                   Link
                 </a>
               </li>
@@ -111,30 +83,6 @@ const Episode1 = () => {
             <div className="row justify-content-md-center">
               <div className="col-sm-4">
                 <div className="card p-3 m-auto mt-4 mb-4 shadow">
-                  {/* <div className="upper-container">
-                    <img
-                      src={episode.image}
-                      alt=""
-                      height="100px"
-                      width="100px"
-                    />
-                  </div>
-                  <div className="lower-container">
-                    <h3 className="heading">{episode.name}</h3>
-                    <span className="heading" data-tip={episode.gender}>
-                      {episode.gender == "Male" ? <FaMale /> : <FaFemale />}
-                    </span>
-                    <ReactTooltip />
-                    <h3 className="heading">{episode.location.name}</h3>
-                    <h3 className="heading">{episode.origin.name}</h3>
-                    <h3 className="heading">{episode.species}</h3>
-
-                    <span className="heading" data-tip={episode.status}>
-                      <FaBookDead />
-                    </span>
-                    <ReactTooltip />
-                  </div> */}
-
                   <CharcterDesign
                     imgsrc={episode.image}
                     mname={episode.name}
@@ -144,6 +92,27 @@ const Episode1 = () => {
                     gender={episode.gender}
                     status={episode.status}
                   />
+                  <a
+                    className="btn btn-primary mt-1 btn_episode"
+                    onClick={() => {
+                      props.history.push({
+                        pathname: "/location/" + def(episode.location.url),
+                      });
+                    }}
+                  >
+                    Details
+                  </a>
+
+                  <a
+                    className="btn btn-primary mt-2 btn_episode"
+                    onClick={() => {
+                      props.history.push({
+                        pathname: "/location/" + def(episode.origin.url),
+                      });
+                    }}
+                  >
+                    Details
+                  </a>
                 </div>
               </div>
             </div>

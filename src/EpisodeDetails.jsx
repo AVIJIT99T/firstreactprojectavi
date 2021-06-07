@@ -27,7 +27,7 @@ const EpisodeDetails = (props) => {
                           className="btn3_details"
                           onClick={() => {
                             props.history.push({
-                              pathname: "/charcter/" + (index + 1),
+                              pathname: "/episode/" + (index + 1),
                             });
                           }}
                         >

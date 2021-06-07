@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar_submit {
+  background: violet;
+}
+.navbar_submit h3 {
+  margin: auto;
+  font-weight: 700;
+}
+.submit_div label {
+  font-size: 30px;
+  border-bottom: blueviolet 2px solid;
+}
+.submit_div input {
+  width: 100%;
+  padding-left: 5px;
+}
+.submit_div input:hover {
+  background: linear-gradient(90deg, #a3c9f1, #55e7fc);
+}

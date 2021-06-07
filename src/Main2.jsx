@@ -108,7 +108,7 @@ const Main2 = (props) => {
                           className="btn btn-primary"
                           onClick={() => {
                             props.history.push({
-                              pathname: "/episode/" + (index + 1),
+                              pathname: "/character/" + (index + 1),
                             });
                           }}
                         >

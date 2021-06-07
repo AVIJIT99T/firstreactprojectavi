@@ -20,5 +20,11 @@
   justify-content: space-evenly;
 } */
 .main_char {
-  background-color: rgb(163, 248, 156);
+  background-color: rgb(212, 245, 209);
+}
+.navbar_char {
+  background-color: #32cd32;
+}
+.card_char h3 {
+  color: blueviolet;
 }

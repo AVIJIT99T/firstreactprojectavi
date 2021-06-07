@@ -17,6 +17,7 @@ const CharcterDesign = (props) => {
 
         <h3 className="heading">{props.lname}</h3>
         <h3 className="heading">{props.oname}</h3>
+
         <span className="heading" data-tip={props.gender}>
           {props.gender == "Male" ? <FaMale /> : <FaFemale />}
         </span>

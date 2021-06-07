@@ -31,7 +31,19 @@ const CharacterDetails = (props) => {
     getImages();
   }, []);
 
-  //
+  const def = (a) => {
+    var s = a;
+    var spl = s.split("/");
+
+    var num = 0;
+    var last = spl[spl.length - 1];
+
+    for (var i = 0; i < last.length; i++) {
+      num = num * 10 + (last[i] - "0");
+    }
+
+    return num;
+  };
 
   return (
     <>
@@ -75,10 +87,21 @@ const CharacterDetails = (props) => {
             />
 
             <a
-              className="btn btn-primary mt-1"
+              className="btn btn-primary mt-1 btn_char"
               onClick={() => {
                 props.history.push({
-                  pathname: "/location/" + img.location.url.substring(41),
+                  pathname: "/location/" + def(img.location.url),
+                });
+              }}
+            >
+              Details
+            </a>
+
+            <a
+              className="btn btn-primary mt-2 btn_char"
+              onClick={() => {
+                props.history.push({
+                  pathname: "/location/" + def(img.origin.url),
                 });
               }}
             >

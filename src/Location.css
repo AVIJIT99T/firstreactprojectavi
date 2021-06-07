@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.location_main {
+  background: #fffaf0;
+}
+.card_location h3 {
+  color: crimson;
+}
+.btn_location {
+  border-radius: 40px;
+  background: violet;
+  color: #111;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
+}
+.btn_location:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #755bea, #ff72c0);
+}
