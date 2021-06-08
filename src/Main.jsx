@@ -68,7 +68,7 @@ const Main = (props) => {
               />
             </a>
             <span className="navbar-brand mb-1 m-auto h1">
-              Rick And Morty API Characters
+              Rick And Morty API Characters and Avijit
             </span>
 
             <form className="d-flex">
