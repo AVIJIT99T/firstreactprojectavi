@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import { useParams } from "react-router-dom";
 import "./Episode.css";
+import { FaMale } from "react-icons/fa";
+import { FaFemale } from "react-icons/fa";
+import ReactTooltip from "react-tooltip";
+import { FaBookDead } from "react-icons/fa";
 
 import CharcterDesign from "./CharcterDesign";
 
@@ -83,7 +87,7 @@ const Episode1 = (props) => {
             <div className="row justify-content-md-center">
               <div className="col-sm-4">
                 <div className="card p-3 m-auto mt-4 mb-4 shadow">
-                  <CharcterDesign
+                  {/* <CharcterDesign
                     imgsrc={episode.image}
                     mname={episode.name}
                     lname={episode.location.name}
@@ -91,28 +95,52 @@ const Episode1 = (props) => {
                     species={episode.species}
                     gender={episode.gender}
                     status={episode.status}
-                  />
-                  <a
-                    className="btn btn-primary mt-1 btn_episode"
-                    onClick={() => {
-                      props.history.push({
-                        pathname: "/location/" + def(episode.location.url),
-                      });
-                    }}
-                  >
-                    Details
-                  </a>
+                  /> */}
+                  <div className="upper-container">
+                    <img
+                      src={episode.image}
+                      alt=""
+                      height="100px"
+                      width="100px"
+                    />
+                  </div>
+                  <div className="lower-container">
+                    <h3 className="heading">{episode.name}</h3>
 
-                  <a
-                    className="btn btn-primary mt-2 btn_episode"
-                    onClick={() => {
-                      props.history.push({
-                        pathname: "/location/" + def(episode.origin.url),
-                      });
-                    }}
-                  >
-                    Details
-                  </a>
+                    <h3 className="heading">{episode.location.name}</h3>
+                    <a
+                      className="btn btn-primary mt-1 mb-1 btn_episode"
+                      onClick={() => {
+                        props.history.push({
+                          pathname: "/location/" + def(episode.location.url),
+                        });
+                      }}
+                    >
+                      Details
+                    </a>
+
+                    <h3 className="heading">{episode.origin.name}</h3>
+                    <a
+                      className="btn btn-primary mt-1  btn_episode"
+                      onClick={() => {
+                        props.history.push({
+                          pathname: "/location/" + def(episode.origin.url),
+                        });
+                      }}
+                    >
+                      Details
+                    </a>
+                    <br />
+                    <span className="heading" data-tip={episode.gender}>
+                      {props.gender == "Male" ? <FaMale /> : <FaFemale />}
+                    </span>
+                    <ReactTooltip />
+                    <h3 className="heading">{episode.species}</h3>
+                    <span className="heading" data-tip={episode.status}>
+                      <FaBookDead />
+                    </span>
+                    <ReactTooltip />
+                  </div>
                 </div>
               </div>
             </div>
