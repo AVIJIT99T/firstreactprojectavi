@@ -27,7 +27,7 @@ const App = () => {
         <Route exact path="/location/:lc" component={Location} />
         <Route exact path="/location/:lc1" component={Location1} />
         <Route component={Error} />
-        {/* <Redirect to="/" /> */}
+        <Redirect to="/" />
       </Switch>
     </>
   );
