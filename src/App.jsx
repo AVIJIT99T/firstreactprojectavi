@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -16,19 +16,21 @@ import Submit from "./Submit";
 const App = () => {
   return (
     <>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/contact1" component={Submit} />
-        <Route path="/main" component={Main2} />
-        <Route path="/character/:eId" component={Episode1} />
-        <Route exact path="/episode/:id" component={Character} />
-        <Route exact path="/location/:lc" component={Location} />
-        <Route exact path="/location/:lc1" component={Location1} />
-        {/* <Route component={Error} /> */}
-        <Redirect to="/" />
-      </Switch>
+      <HashRouter basename="/">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/contact1" component={Submit} />
+          <Route path="/main" component={Main2} />
+          <Route path="/character/:eId" component={Episode1} />
+          <Route exact path="/episode/:id" component={Character} />
+          <Route exact path="/location/:lc" component={Location} />
+          <Route exact path="/location/:lc1" component={Location1} />
+          {/* <Route component={Error} /> */}
+          <Redirect to="/" />
+        </Switch>
+      </HashRouter>
     </>
   );
 };
